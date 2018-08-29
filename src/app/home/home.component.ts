@@ -40,7 +40,9 @@ export class HomeComponent implements OnInit {
   get data(): Profile | null {
     const credentials = this.authenticationService.credentials;
 
-    if (!credentials) return null;
+    if (!credentials) {
+      return null;
+    }
 
     const { name, username, text, gender, age, birthdate } = credentials;
 
@@ -50,7 +52,7 @@ export class HomeComponent implements OnInit {
       birthdate: birthdate,
       age: age,
       gender: gender,
-      text: text
+      text: text || ''
     };
 
     return data;
