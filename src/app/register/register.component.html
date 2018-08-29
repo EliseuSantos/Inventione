@@ -1,0 +1,97 @@
+<div id="main-wrapper">
+  <nav id="header-inventione" class="navbar navbar-default bg-primary">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <img src="assets/logo.png" height="60">
+        <p>
+          Teste Inventione
+        </p>
+        <h2>Eliseu dos Santos
+          <div class="d-inline-block ml-3" ngbDropdown>
+            <button id="language-dropdown" class="btn btn-sm btn-secondary" ngbDropdownToggle>
+              {{currentLanguage}}
+            </button>
+            <div ngbDropdownMenu aria-labelledby="language-dropdown">
+              <button class="dropdown-item" *ngFor="let language of languages" (click)="setLanguage(language)">
+                {{language}}
+              </button>
+            </div>
+          </div>
+        </h2>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-6 left-side">
+        <header>
+          <span>
+            Somos dedicados à arte de desenvolver mais que software, ideias disruptoras e novos conceitos.
+          </span>
+          <h3 class="text-left-side">A <strong>Inventione</strong>
+            tem <strong>inovação</strong> em seu DNA.</h3>
+        </header>
+      </div>
+      <div class="col-md-6 right-side">
+        <form (ngSubmit)="register()" [formGroup]="registerForm" novalidate>
+          <span class="input input-css3transition">
+            <input type="email" class="input-field input-field-css3transition" formControlName="username" autocomplete="username" />
+            <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="username">
+              <span class="input-label-content input-label-content-css3transition">Email</span>
+            </label>
+          </span>
+          <span class="input input-css3transition">
+            <input type="password" class="input-field input-field-css3transition" formControlName="password" />
+            <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="password">
+              <span class="input-label-content input-label-content-css3transition" translate>Password</span>
+            </label>
+          </span>
+          <span class="input input-css3transition">
+            <input type="text" class="input-field input-field-css3transition" formControlName="name" autocomplete="name"
+            />
+            <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="name">
+              <span class="input-label-content input-label-content-css3transition" translate>Name</span>
+            </label>
+          </span>
+          <span class="input input-css3transition">
+            <input class="input-field input-field-css3transition"  restrict-input="^[0-9-]*$" type="number" formControlName="age" min="0" id="idade">
+            <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="idade">
+              <span class="input-label-content input-label-content-css3transition" translate>Age</span>
+            </label>
+          </span>
+          <span class="input input-css3transition">
+            <input class="input-field input-field-css3transition"
+              formControlName="birthdate" type="text" id="birthdate"
+              placeholder="DD/MM/YYYY"
+              mask='99/99/9999'>
+            <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="birthdate">
+              <span class="input-label-content input-label-content-css3transition" translate>Birthdate</span>
+            </label>
+          </span>
+          <input type="radio" value="Masculino" formControlName="gender" translate > Male<br>
+          <input type="radio" value="Feminino" formControlName="gender" translate > Female<br>
+          <hr>
+          <input type="checkbox"
+            formControlName="extend"
+            (change)="registerForm.controls.extend = !registerForm.controls.extend" translate /> Enable Content<br>
+
+          <span [hidden]="registerForm.controls.extend" class="input input-css3transition">
+            <textarea class="input-field input-field-css3transition"
+               formControlName="text"
+               id="text" maxlength="1000" rows="10"></textarea>
+
+            <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="text">
+              <span class="input-label-content input-label-content-css3transition" translate>Text</span>
+            </label>
+          </span>
+          <div class="cta">
+            <button class="btn btn-primary w-100 btn-block" type="submit" [disabled]="registerForm.invalid || isLoading">
+              <i class="fas fa-cog fa-spin" [hidden]="!isLoading"></i>
+              <span translate>Register</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

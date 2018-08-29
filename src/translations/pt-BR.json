@@ -1,0 +1,19 @@
+{
+  "APP_NAME": "Inventione - Test Developer",
+  "Hello world !": "Olá Mundo",
+  "Home": "Início",
+  "Logged in as": "Você está logado como ",
+  "Register": "Registar",
+  "Logout": "Sair",
+  "Password": "Senha",
+  "Password is required": "A senha é obrigatória",
+  "Version": "Versão",
+  "Name": "Nome",
+  "Age": "Idade",
+  "Birthdate": "Data de Nascimento",
+  "Male": "Masculino",
+  "Female": "Feminino",
+  "Text": "Texto",
+  "Gender": "Sexo",
+  "Enable Content": "Habilitar Conteúdo"
+}

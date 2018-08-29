@@ -1,0 +1,22 @@
+.logo {
+  width: 100px;
+}
+
+q {
+  font-style: italic;
+  font-size: 1.2rem;
+  quotes: "« " " »";
+}
+
+.content-info {
+  text-align: left;
+  list-style: disclosure-closed;
+  font-size: 18px;
+}
+
+.content-info li {
+  padding: 10px;
+}
+.content-info li > span {
+  font-weight: bold;
+}
