@@ -65,8 +65,8 @@ export class RegisterComponent implements OnInit {
       birthdate: ['', Validators.required],
       age: ['', Validators.required],
       gender: ['', Validators.required],
-      extend: false,
-      text: null,
+      extend: [false],
+      text: [null],
     });
   }
 

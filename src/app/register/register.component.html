@@ -73,9 +73,10 @@
           <hr>
           <input type="checkbox"
             formControlName="extend"
-            (change)="registerForm.controls.extend = !registerForm.controls.extend" translate /> Enable Content<br>
+            ng-true-value="1" ng-false-value="0"
+            translate /> Enable Content<br>
 
-          <span [hidden]="registerForm.controls.extend" class="input input-css3transition">
+          <span [hidden]="!registerForm.get('extend').value" class="input input-css3transition">
             <textarea class="input-field input-field-css3transition"
                formControlName="text"
                id="text" maxlength="1000" rows="10"></textarea>

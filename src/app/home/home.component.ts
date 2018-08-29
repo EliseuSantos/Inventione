@@ -4,6 +4,14 @@ import { finalize } from 'rxjs/operators';
 import { QuoteService } from './quote.service';
 import { AuthenticationService } from '../core/authentication/authentication.service';
 
+export interface Profile {
+  username: string;
+  name: string;
+  birthdate: string;
+  age: string;
+  gender: string;
+  text: string;
+}
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -29,15 +37,21 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  get data(): object | null {
+  get data(): Profile | null {
     const credentials = this.authenticationService.credentials;
 
-    if (!credentials)
-      return null;
+    if (!credentials) return null;
 
     const { name, username, text, gender, age, birthdate } = credentials;
 
-    const data = { username: username, name: name, birthdate: birthdate, age: age, gender: gender, text: text };
+    const data = {
+      username: username,
+      name: name,
+      birthdate: birthdate,
+      age: age,
+      gender: gender,
+      text: text
+    };
 
     return data;
   }
