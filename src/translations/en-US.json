@@ -3,7 +3,7 @@
   "Hello world !": "Hello world",
   "Home": "Home",
   "Logged in as": "Logged in as ",
-  "Register": "Register",
+  "Register": "Present",
   "Logout": "Logout",
   "Password": "Password",
   "Password is required": "Password is required",
@@ -15,5 +15,6 @@
   "Female": "Female",
   "Text": "Text",
   "Gender": "Gender",
-  "Enable Content": "Enable Content"
+  "Enable Content": "Enable Second Panel",
+  "words": "words"
 }

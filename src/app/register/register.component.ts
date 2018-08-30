@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
         log.debug(`${credentials.username} successfully logged in`);
         this.router.navigate(['/'], { replaceUrl: true });
       }, error => {
-        log.debug(`Register error: ${error}`);
+        // log.debug(`Register error: ${error}`);
         this.error = error;
       });
   }

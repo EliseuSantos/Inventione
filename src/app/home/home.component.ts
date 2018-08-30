@@ -11,6 +11,7 @@ export interface Profile {
   age: string;
   gender: string;
   text: string;
+  totalWorld?: Number;
 }
 @Component({
   selector: "app-home",
@@ -37,6 +38,11 @@ export class HomeComponent implements OnInit {
       });
   }
 
+  wordCount(text: string): Number {
+    const s = text ? text.split(/\s+/) : 0;
+    return s ? s.length : 0;
+  }
+
   get data(): Profile | null {
     const credentials = this.authenticationService.credentials;
 
@@ -52,7 +58,8 @@ export class HomeComponent implements OnInit {
       birthdate: birthdate,
       age: age,
       gender: gender,
-      text: text || ''
+      text: text || '',
+      totalWorld: this.wordCount(text) || 0
     };
 
     return data;

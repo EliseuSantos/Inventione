@@ -33,28 +33,28 @@
         </header>
       </div>
       <div class="col-md-6 right-side">
-        <form (ngSubmit)="register()" [formGroup]="registerForm" novalidate>
+        <form (ngSubmit)="register()" [formGroup]="registerForm">
           <span class="input input-css3transition">
-            <input type="email" class="input-field input-field-css3transition" formControlName="username" autocomplete="username" />
+            <input type="email" class="input-field input-field-css3transition" formControlName="username" required/>
             <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="username">
               <span class="input-label-content input-label-content-css3transition">Email</span>
             </label>
           </span>
           <span class="input input-css3transition">
-            <input type="password" class="input-field input-field-css3transition" formControlName="password" />
+            <input type="password" class="input-field input-field-css3transition" formControlName="password" required />
             <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="password">
               <span class="input-label-content input-label-content-css3transition" translate>Password</span>
             </label>
           </span>
           <span class="input input-css3transition">
-            <input type="text" class="input-field input-field-css3transition" formControlName="name" autocomplete="name"
+            <input type="text" class="input-field input-field-css3transition" formControlName="name" autocomplete="name" required
             />
             <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="name">
               <span class="input-label-content input-label-content-css3transition" translate>Name</span>
             </label>
           </span>
           <span class="input input-css3transition">
-            <input class="input-field input-field-css3transition"  restrict-input="^[0-9-]*$" type="number" formControlName="age" min="0" id="idade">
+            <input class="input-field input-field-css3transition"  restrict-input="^[0-9-]*$" type="number" formControlName="age" min="0" id="idade" required>
             <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="idade">
               <span class="input-label-content input-label-content-css3transition" translate>Age</span>
             </label>
@@ -63,18 +63,18 @@
             <input class="input-field input-field-css3transition"
               formControlName="birthdate" type="text" id="birthdate"
               placeholder="DD/MM/YYYY"
-              mask='99/99/9999'>
+              mask='99/99/9999' required>
             <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="birthdate">
               <span class="input-label-content input-label-content-css3transition" translate>Birthdate</span>
             </label>
           </span>
-          <input type="radio" value="Masculino" formControlName="gender"> {{ 'Male' | translate }}<br>
-          <input type="radio" value="Feminino" formControlName="gender"> {{ 'Female' | translate }}<br>
+          <input type="radio" value="Masculino" formControlName="gender" required> {{ 'Male' | translate }}<br>
+          <input type="radio" value="Feminino" formControlName="gender" required> {{ 'Female' | translate }}<br>
           <hr>
           <input type="checkbox"
             formControlName="extend"
             ng-true-value="1" ng-false-value="0"
-            translate /> Enable Content<br>
+            /> {{ 'Enable Content' | translate }}<br>
 
           <span [hidden]="!registerForm.get('extend').value" class="input input-css3transition">
             <textarea class="input-field input-field-css3transition"

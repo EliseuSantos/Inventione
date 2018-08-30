@@ -3,7 +3,7 @@
   "Hello world !": "Olá Mundo",
   "Home": "Início",
   "Logged in as": "Você está logado como ",
-  "Register": "Registar",
+  "Register": "Apresentar",
   "Logout": "Sair",
   "Password": "Senha",
   "Password is required": "A senha é obrigatória",
@@ -15,5 +15,6 @@
   "Female": "Feminino",
   "Text": "Texto",
   "Gender": "Sexo",
-  "Enable Content": "Habilitar Conteúdo"
+  "Enable Content": "Habilitar Segundo Painel",
+  "words": "palavras"
 }
