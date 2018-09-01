@@ -3,6 +3,7 @@ import { finalize } from 'rxjs/operators';
 
 import { QuoteService } from './quote.service';
 import { AuthenticationService } from '../core/authentication/authentication.service';
+import * as moment from 'moment';
 
 export interface Profile {
   username: string;
@@ -39,8 +40,8 @@ export class HomeComponent implements OnInit {
   }
 
   wordCount(text: string): Number {
-    const s = text ? text.split(/\s+/) : 0;
-    return s ? s.length : 0;
+    const matches = text.match(/[\w\d\’\'-]+/gi);
+    return matches ? matches.length : 0;
   }
 
   get data(): Profile | null {
@@ -50,12 +51,16 @@ export class HomeComponent implements OnInit {
       return null;
     }
 
+    if (!credentials.text) {
+      credentials.text = '';
+    }
+
     const { name, username, text, gender, age, birthdate } = credentials;
 
     const data = {
       username: username,
       name: name,
-      birthdate: birthdate,
+      birthdate: moment(birthdate, 'DDMMYYYY').format('DD/MM/YYYY'),
       age: age,
       gender: gender,
       text: text || '',

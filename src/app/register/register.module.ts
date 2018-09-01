@@ -17,8 +17,6 @@ import { NgxMaskModule } from 'ngx-mask';
     RegisterRoutingModule,
     NgxMaskModule.forRoot({})
   ],
-  declarations: [
-    RegisterComponent
-  ]
+  declarations: [RegisterComponent]
 })
-export class RegisterModule { }
+export class RegisterModule {}

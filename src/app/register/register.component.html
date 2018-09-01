@@ -54,7 +54,7 @@
             </label>
           </span>
           <span class="input input-css3transition">
-            <input class="input-field input-field-css3transition"  restrict-input="^[0-9-]*$" type="number" formControlName="age" min="0" id="idade" required>
+            <input class="input-field input-field-css3transition"  mask='99' type="number" formControlName="age" min="0" id="idade" required>
             <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="idade">
               <span class="input-label-content input-label-content-css3transition" translate>Age</span>
             </label>
@@ -63,6 +63,8 @@
             <input class="input-field input-field-css3transition"
               formControlName="birthdate" type="text" id="birthdate"
               placeholder="DD/MM/YYYY"
+              clean=true
+              mask-clean=true
               mask='99/99/9999' required>
             <label class="input-label input-label-css3transition input-label-css3transition-color-3" for="birthdate">
               <span class="input-label-content input-label-content-css3transition" translate>Birthdate</span>
